@@ -1,0 +1,11 @@
+sensu_agent:
+  backend_urls:
+    - "ws://localhost:8081"
+  deregister: "true"
+  keepalive_interval: "10"
+  keepalive_warning_timeout: "20"
+  subscriptions:
+    - "all"
+    - "redis"
+  labels:
+    workload: "infra"

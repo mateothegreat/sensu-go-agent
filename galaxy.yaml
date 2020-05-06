@@ -1,0 +1,13 @@
+namespace: "mateothegreat"
+name: "sensu_go_agent"
+version: "0.0.1"
+readme: "README.md"
+authors:
+  - "Matthew Davis (https://matthewdavis.io)"
+description: "Install & configure the sensu go monitoring agent."
+license: ["MIT"]
+license_file: "COPYING"
+tags: ["monitoring", "sensu", "agent"]
+repository: "https://github.com/mateothegreat/sensu-go-agent.git"
+homepage: "https://github.com/mateothegreat/sensu-go-agent"
+issues: "https://github.com/mateothegreat/sensu-go-agent/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"

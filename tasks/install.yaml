@@ -1,0 +1,25 @@
+- name: "Install sensu go repo"
+  become: "true"
+  copy:
+    src: "sensu.repo"
+    dest: "/etc/yum.repos.d/sensu.repo"
+
+- name: "Install sensu agent from yum"
+  become: "true"
+  yum:
+    name: "sensu-go-agent"
+    enablerepo: "sensu_stable"
+
+- name: "Install sensu agent.yml"
+  become: "true"
+  template:
+    src: "agent.yml.j2"
+    dest: "/etc/sensu/agent.yml"
+    force: "yes"
+
+- name: "Enable & start sensu agent service"
+  become: "true"
+  systemd:
+    name: "sensu-agent"
+    state: "restarted"
+    enabled: "yes"
