@@ -1,6 +1,8 @@
 backend-url: {{ sensu_agent.backend_urls | to_yaml }}
+namespace: {{ sensu_agent.namespace | default(omit) }}
 deregister: {{ sensu_agent.deregister }}
 keepalive-interval: {{ sensu_agent.keepalive_interval }}
 keepalive-warning-timeout: {{ sensu_agent.keepalive_warning_timeout }}
 subscriptions: {{ sensu_agent.subscriptions | to_yaml }}
 labels: {{ sensu_agent.labels | to_yaml }}
+log-level: {{ sensu_agent.log_level | default('error') }}

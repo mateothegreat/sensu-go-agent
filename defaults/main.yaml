@@ -1,11 +1,13 @@
 sensu_agent:
+  namespace: "{{ sensu_namespace }}"
   backend_urls:
-    - "ws://localhost:8081"
-  deregister: "true"
+    - "ws://some_host:8081"
+  deregister: "false"
   keepalive_interval: "10"
   keepalive_warning_timeout: "20"
   subscriptions:
     - "all"
-    - "redis"
+    - "{{ sensu_subscription | default(omit) }}"
   labels:
-    workload: "infra"
+    role: "{{ sensu_role }}"
+    region: "{{ aws_region }}"
